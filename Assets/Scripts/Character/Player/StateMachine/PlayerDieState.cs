@@ -22,4 +22,10 @@ public class PlayerDieState : PlayerBaseState
         base.Exit();
         Debug.Log("Die 탈출");
     }
+    
+    private bool IsAnimationEnd()
+    {
+        AnimatorStateInfo stateInfo = player.AnimatorController.Animator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.normalizedTime >= 1f;
+    }
 }

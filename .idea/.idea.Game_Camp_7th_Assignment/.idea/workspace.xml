@@ -6,26 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="68e01d02-df69-452d-bb48-b7e8b5e75020" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Game_Camp_7th_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game_Camp_7th_Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 5.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 6.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 7.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 7.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 8.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/SO/Wave/Wave 8.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Monster/NormalMonster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Monster/NormalMonster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Player/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Player/Player_Die.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Player/Player_Die.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StageScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StageScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/Monster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterMoveState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterStateMachine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/StateMachine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/StateMachine/StateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/WaveSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/WaveSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Feature/MonsterSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Feature/MonsterSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerAnimatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerDieState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerDieState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/DataDeclaration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataDeclaration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interface/ISkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interface/ISkill.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +32,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd2d3e9b010a4ba4b3fdc0456cd6b40b469200/eb/9229db7a/CancellationTokenSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerAnimationData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/MonsterSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/ISkill.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -121,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1755068983632</updated>
       <workItem from="1755068985784" duration="213000" />
-      <workItem from="1755069350973" duration="21961000" />
+      <workItem from="1755069350973" duration="26592000" />
     </task>
     <servers />
   </component>

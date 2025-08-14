@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Monster : MonoBehaviour
+public abstract class Monster : MonoBehaviour, IDamageable
 {
     [SerializeField] protected MonsterSO data;
     
@@ -29,13 +29,28 @@ public abstract class Monster : MonoBehaviour
 
     protected void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("충돌 발생");
         stateMachine.ChangeState(stateMachine.AttackState);
+        var player = other.gameObject.GetComponent<IDamageable>();
+        player.TakeDamage(10f);
     }
 
     public void SetMonsterData(MonsterSO data)
     {
         this.data = data;
         spriteController.Init(data.ID);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        // if (statController.CurrentHP > 0f)
+        // {
+        //     statController.Damaged(damage);
+        //     if (statController.CurrentHP <= 0f)
+        //     {
+        //         Dead();
+        //         return;
+        //     }
+        //     stateMachine.ChangeState(stateMachine.HitState);
+        // }
     }
 }

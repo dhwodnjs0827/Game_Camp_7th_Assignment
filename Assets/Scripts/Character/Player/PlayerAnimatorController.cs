@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerAnimatorController : MonoBehaviour
 {
     private Animator animator;
+    public Animator Animator => animator;
 
     private void Awake()
     {
