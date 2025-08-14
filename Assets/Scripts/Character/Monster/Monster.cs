@@ -4,11 +4,11 @@ public abstract class Monster : MonoBehaviour
 {
     [SerializeField] protected MonsterSO data;
     
-    private SpriteController spriteController;
+    private MonsterSpriteController spriteController;
 
     protected virtual void Awake()
     {
-        spriteController = GetComponentInChildren<SpriteController>();
+        spriteController = GetComponentInChildren<MonsterSpriteController>();
         spriteController.Init(data.ID);
     }
 }
