@@ -1,22 +1,9 @@
 using UnityEngine;
 
-public class PlayerAnimationData
+public static class PlayerAnimationData
 {
-    private readonly string idleParameterName = "Idle";
-    private readonly string attackParameterName = "Attack";
-    private readonly string hitParameterName = "Hit";
-    private readonly string dieParameterName = "Die";
-    
-    public int IdleParameterHash { get; private set; }
-    public int HitParameterHash { get; private set; }
-    public int AttackParameterHash { get; private set; }
-    public int DieParameterHash { get; private set; }
-
-    public PlayerAnimationData()
-    {
-        IdleParameterHash = Animator.StringToHash(idleParameterName);
-        AttackParameterHash = Animator.StringToHash(attackParameterName);
-        HitParameterHash = Animator.StringToHash(hitParameterName);
-        DieParameterHash = Animator.StringToHash(dieParameterName);
-    }
+    public static readonly int Idle = Animator.StringToHash("Idle");
+    public static readonly int Attack = Animator.StringToHash("Attack");
+    public static readonly int Hit = Animator.StringToHash("Hit");
+    public static readonly int Die = Animator.StringToHash("Die");
 }

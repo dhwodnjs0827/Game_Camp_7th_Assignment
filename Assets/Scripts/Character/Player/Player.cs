@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         animatorController = GetComponentInChildren<PlayerAnimatorController>();
+    }
+
+    private void Start()
+    {
         stateMachine = new PlayerStateMachine(this);
     }
 

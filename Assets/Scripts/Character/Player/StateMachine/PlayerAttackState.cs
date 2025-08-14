@@ -4,7 +4,7 @@ public class PlayerAttackState : PlayerBaseState
 {
     public PlayerAttackState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        animationHash = player.AnimatorController.AnimationData.AttackParameterHash;
+        animationHash = PlayerAnimationData.Attack;
     }
 
     public override void Enter()

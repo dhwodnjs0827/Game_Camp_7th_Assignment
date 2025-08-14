@@ -4,7 +4,7 @@ public class PlayerDieState : PlayerBaseState
 {
     public PlayerDieState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        animationHash = player.AnimatorController.AnimationData.DieParameterHash;
+        animationHash = PlayerAnimationData.Die;
     }
 
     public override void Enter()

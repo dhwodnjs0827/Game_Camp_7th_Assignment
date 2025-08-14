@@ -12,28 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde55def00baa4fab825f105b866bd4b, type: 3}
   m_Name: Arrow
   m_EditorClassIdentifier: 
-  SkillName: "\uD50C\uB77C\uC2A4\uB9C8"
-  Description: "\uD50C\uB77C\uC2A4\uB9C8\uB97C \uBC1C\uC0AC\uD574 \uBC94\uC704 \uACF5\uACA9\uC744
+  SkillName: "\uD654\uC0B4"
+  Description: "\uD654\uC0B4\uC744 \uBC1C\uC0AC\uD574 \uB2E8\uC77C \uACF5\uACA9\uC744
     \uD569\uB2C8\uB2E4."
-  SkillType: 1
+  SkillType: 2
   AttackType: 1
-  AttackTargetType: 0
-  SkillData:
-  - Damage: 1
-    Cooldown: 6
+  AttackTargetType: 1
+  SkillDatasByGrade:
+  - Damage: 0
+    Cooldown: 0
     Grade: 0
-  - Damage: 2
-    Cooldown: 5
-    Grade: 1
-  - Damage: 3
-    Cooldown: 4
-    Grade: 2
-  - Damage: 4
-    Cooldown: 3
-    Grade: 3
-  - Damage: 5
-    Cooldown: 2
-    Grade: 4
-  - Damage: 6
-    Cooldown: 1
-    Grade: 5
+  - Damage: 0
+    Cooldown: 0
+    Grade: 0
+  - Damage: 0
+    Cooldown: 0
+    Grade: 0
+  - Damage: 0
+    Cooldown: 0
+    Grade: 0
+  - Damage: 0
+    Cooldown: 0
+    Grade: 0
+  - Damage: 0
+    Cooldown: 0
+    Grade: 0

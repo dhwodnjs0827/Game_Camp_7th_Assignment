@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6859d35c190ad45acad008e90c6d0a4f, type: 3}
+  m_Name: Wave 3
+  m_EditorClassIdentifier: 
+  Index: 3
+  Duration: 15
+  SpawnMonsters:
+  - {fileID: 11400000, guid: e604737b508364db492091b8e6217165, type: 2}
+  - {fileID: 11400000, guid: 397e45f2f550c4eaa8c4367a28f644dd, type: 2}
+  SpawnRate: 2
+  SpawnCount: 5

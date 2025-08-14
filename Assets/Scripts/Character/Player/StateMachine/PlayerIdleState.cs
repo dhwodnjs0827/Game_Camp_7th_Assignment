@@ -4,7 +4,7 @@ public class PlayerIdleState : PlayerBaseState
 {
     public PlayerIdleState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        animationHash = player.AnimatorController.AnimationData.IdleParameterHash;
+        animationHash = PlayerAnimationData.Idle;
     }
 
     public override void Enter()
