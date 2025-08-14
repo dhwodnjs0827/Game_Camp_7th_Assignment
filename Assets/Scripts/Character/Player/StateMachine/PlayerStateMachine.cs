@@ -15,7 +15,5 @@ public class PlayerStateMachine : StateMachine
         AttackState = new PlayerAttackState(this);
         HitState = new PlayerHitState(this);
         DieState = new PlayerDieState(this);
-        
-        ChangeState(IdleState);
     }
 }

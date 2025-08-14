@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Index: 5
   Duration: 15
-  SpawnMonsters:
-  - {fileID: 11400000, guid: 8f1ce84b46d8a4120b72eaf10dd4b424, type: 2}
+  SpawnMonster: {fileID: 11400000, guid: 8f1ce84b46d8a4120b72eaf10dd4b424, type: 2}
   SpawnRate: 2
   SpawnCount: 5

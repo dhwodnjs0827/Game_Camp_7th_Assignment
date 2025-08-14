@@ -2,7 +2,7 @@ public class MonsterStateMachine : StateMachine
 {
     public Monster Monster { get; }
     
-    public MonsterMoveState IdleState { get; }
+    public MonsterMoveState MoveState { get; }
     public MonsterAttackState AttackState { get; }
     public MonsterHitState HitState { get; }
     public MonsterDieState DieState { get; }
@@ -11,11 +11,9 @@ public class MonsterStateMachine : StateMachine
     {
         Monster = monster;
         
-        IdleState = new MonsterMoveState(this);
+        MoveState = new MonsterMoveState(this);
         AttackState = new MonsterAttackState(this);
         HitState = new MonsterHitState(this);
         DieState = new MonsterDieState(this);
-        
-        ChangeState(IdleState);
     }
 }

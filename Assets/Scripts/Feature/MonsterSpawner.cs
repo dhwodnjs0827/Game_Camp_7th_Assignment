@@ -36,7 +36,7 @@ public class MonsterSpawner : MonoBehaviour
             waveTimer -= Time.deltaTime;
             if (waveCooldown <= 0)
             {
-                RespawnMonster(currentWave.SpawnMonsters[0]);
+                RespawnMonster(currentWave.SpawnMonster);
             }
             else
             {
