@@ -40,10 +40,33 @@ public class SkillGroup : MonoBehaviour
                 {
                     slot = Instantiate(prefab, arrowGroup);
                 }
-                slot?.Init(skillDatas[i], j);
-                slots[j] = slot;
+
+                if (slot != null)
+                {
+                    slot.Init(skillDatas[i], j);
+                    slot.OnSynthesizeSkill += SynthesizeSkill;
+                    slots[j] = slot;
+                }
             }
             skillSlots.Add(type, slots);
         }
+    }
+
+    public void GetNewSkill()
+    {
+        SkillType newSkillType = (SkillType)Random.Range(0, 3);
+        skillSlots[newSkillType][0].IncreaseStack();
+    }
+
+    private void SynthesizeSkill(int materialGrade)
+    {
+        if (materialGrade == (int)SkillGrade.Mythic)
+        {
+            // 최고 등급 합성 시
+            return;
+        }
+        int synthesizedGrade = materialGrade + 1;
+        SkillType synthesizedSkillType = (SkillType)Random.Range(0, 3);
+        skillSlots[synthesizedSkillType][synthesizedGrade].IncreaseStack();
     }
 }

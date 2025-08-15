@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 5146275462187191385}
   - component: {fileID: 831991976611469626}
   - component: {fileID: 8314018595292971309}
-  - component: {fileID: 3536091413892991094}
   m_Layer: 5
   m_Name: SkillButton
   m_TagString: Untagged
@@ -276,23 +275,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3536091413892991094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807111696092459867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4a1d0906ec4246ffa9f6fb65aa16aee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 8314018595292971309}
-  iconImage: {fileID: 7267782399715308730}
-  gradeColor: {fileID: 831991976611469626}
-  coolDownImage: {fileID: 7372918800661342296}
-  stackText: {fileID: 2873199112295372376}
 --- !u!1 &4519466666987500591
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,4 +577,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundIcon: {fileID: 6430079556075043865}
-  button: {fileID: 3536091413892991094}
+  button: {fileID: 8314018595292971309}
+  iconImage: {fileID: 7267782399715308730}
+  gradeColor: {fileID: 831991976611469626}
+  coolDownImage: {fileID: 7372918800661342296}
+  stackText: {fileID: 2873199112295372376}

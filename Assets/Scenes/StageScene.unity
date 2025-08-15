@@ -1192,7 +1192,7 @@ GameObject:
   - component: {fileID: 398334226}
   - component: {fileID: 398334225}
   m_Layer: 5
-  m_Name: StageUI
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2430,6 +2430,7 @@ GameObject:
   - component: {fileID: 1225853689}
   - component: {fileID: 1225853691}
   - component: {fileID: 1225853690}
+  - component: {fileID: 1225853692}
   m_Layer: 5
   m_Name: MainUI
   m_TagString: Untagged
@@ -2499,6 +2500,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225853688}
   m_CullTransparentMesh: 1
+--- !u!114 &1225853692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225853688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4d0bae33aaf4f4bbbf46285b211070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveInfoText: {fileID: 1896327761}
+  resourceInfoText: {fileID: 32780627}
+  createSkillButton: {fileID: 259270034}
+  skillGroup: {fileID: 1650906885}
+  monsterSpawner: {fileID: 8014518875771438625}
 --- !u!1 &1257912389
 GameObject:
   m_ObjectHideFlags: 0

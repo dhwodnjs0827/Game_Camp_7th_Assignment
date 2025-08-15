@@ -12,8 +12,11 @@ public class MonsterSpawner : MonoBehaviour
     private float waveCooldown;
     private int currentWaveIndex;
     private Queue<Monster> monsterPool;
+    
+    public float WaveTimer => waveTimer;
+    public int CurrentWaveIndex => currentWaveIndex;
 
-    protected void Awake()
+    private void Awake()
     {
         waves = Resources.LoadAll<WaveSO>("Data/SO/Wave");
         currentWaveIndex = 0;
