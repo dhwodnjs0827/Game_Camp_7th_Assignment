@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="68e01d02-df69-452d-bb48-b7e8b5e75020" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Game_Camp_7th_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game_Camp_7th_Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/SkillButton.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/SkillButton.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterMoveState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/DataDeclaration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataDeclaration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/SkillSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/SkillSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SkillButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SkillButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StageScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StageScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1755068983632</updated>
       <workItem from="1755068985784" duration="213000" />
-      <workItem from="1755069350973" duration="36765000" />
+      <workItem from="1755069350973" duration="37699000" />
     </task>
     <servers />
   </component>
