@@ -10,7 +10,6 @@ public class PlayerHitState : PlayerBaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Hit 진입");
     }
 
     public override void Execute()
@@ -20,6 +19,5 @@ public class PlayerHitState : PlayerBaseState
     public override void Exit()
     {
         base.Exit();
-        Debug.Log("Hit 탈출");
     }
 }

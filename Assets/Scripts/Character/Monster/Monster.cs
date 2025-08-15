@@ -29,9 +29,12 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
     protected void OnCollisionEnter2D(Collision2D other)
     {
-        stateMachine.ChangeState(stateMachine.AttackState);
-        var player = other.gameObject.GetComponent<IDamageable>();
-        player.TakeDamage(10f);
+        if (other.transform.CompareTag("Player"))
+        {
+            stateMachine.ChangeState(stateMachine.AttackState);
+            var player = other.gameObject.GetComponent<IDamageable>();
+            player.TakeDamage(10f);
+        }
     }
 
     public void SetMonsterData(MonsterSO data)
@@ -42,6 +45,8 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
+        Debug.Log($"몬스터 {damage} 받음");
+        Destroy(gameObject);
         // if (statController.CurrentHP > 0f)
         // {
         //     statController.Damaged(damage);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1718366559921490632}
   - component: {fileID: 8828343756228122999}
   - component: {fileID: 3819065675667472446}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NormalMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 5707409435467155103}
   - component: {fileID: 6253977696328184900}
   - component: {fileID: 2611476622548616336}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

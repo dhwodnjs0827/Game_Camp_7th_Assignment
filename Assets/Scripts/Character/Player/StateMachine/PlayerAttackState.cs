@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerAttackState : PlayerBaseState
 {
+    private ISkill skill;
+    
     public PlayerAttackState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
         animationHash = PlayerAnimationData.Attack;
@@ -10,7 +12,6 @@ public class PlayerAttackState : PlayerBaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Attack 진입");
     }
 
     public override void Execute()
@@ -20,6 +21,5 @@ public class PlayerAttackState : PlayerBaseState
     public override void Exit()
     {
         base.Exit();
-        Debug.Log("Attack 탈출");
     }
 }

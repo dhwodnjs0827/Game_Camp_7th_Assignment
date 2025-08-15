@@ -6,13 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="68e01d02-df69-452d-bb48-b7e8b5e75020" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Game_Camp_7th_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game_Camp_7th_Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/SkillSlot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/SkillSlot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StageScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StageScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Feature/MonsterSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Feature/MonsterSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SkillButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SkillButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Monster/NormalMonster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Monster/NormalMonster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/Monster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Monster/StateMachine/MonsterAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerHitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerHitState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerIdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interface/ISkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interface/ISkill.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SkillGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SkillGroup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SkillSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SkillSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +34,15 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd2d3e9b010a4ba4b3fdc0456cd6b40b469200/eb/9229db7a/CancellationTokenSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerAnimationData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerSkillController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/MonsterSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/ISkill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/SkillSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utility/TimeFormatUtility.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -111,7 +121,7 @@
       <option name="presentableId" value="Default" />
       <updated>1755068983632</updated>
       <workItem from="1755068985784" duration="213000" />
-      <workItem from="1755069350973" duration="44558000" />
+      <workItem from="1755069350973" duration="51788000" />
     </task>
     <servers />
   </component>
@@ -127,37 +137,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerIdleState.cs</url>
-          <line>6</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerIdleState.cs" containingFunctionPresentation="생성자 'PlayerIdleState'">
-            <startOffsets>
-              <option value="164" />
-            </startOffsets>
-            <endOffsets>
-              <option value="205" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerIdleState.cs</url>
-          <line>11</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerIdleState.cs" containingFunctionPresentation="메서드 'Enter'">
-            <startOffsets>
-              <option value="260" />
-            </startOffsets>
-            <endOffsets>
-              <option value="273" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

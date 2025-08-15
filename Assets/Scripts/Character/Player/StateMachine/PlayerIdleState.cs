@@ -10,7 +10,6 @@ public class PlayerIdleState : PlayerBaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Idle 진입");
     }
 
     public override void Execute()
@@ -20,6 +19,5 @@ public class PlayerIdleState : PlayerBaseState
     public override void Exit()
     {
         base.Exit();
-        Debug.Log("Idle 탈출");
     }
 }

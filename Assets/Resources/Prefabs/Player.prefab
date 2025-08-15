@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7991065368922758504}
   - component: {fileID: 5317442572552272497}
   - component: {fileID: 224094367596217333}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7073764210912414111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectilePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 5555144636818334057}
   - component: {fileID: 8777742577080056707}
   - component: {fileID: 4621031254244253885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 4263554917380134783}
   - component: {fileID: 605720972598075096}
   - component: {fileID: 1043432401461219682}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CurrentHPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 8144039692683473680}
   - component: {fileID: 9132931318406900780}
   - component: {fileID: 1546581586001982095}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,9 +418,10 @@ GameObject:
   - component: {fileID: 8290541476183504197}
   - component: {fileID: 6069185839521091398}
   - component: {fileID: 7726571922770626555}
-  m_Layer: 0
+  - component: {fileID: 5298774722149915511}
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,3 +541,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 1043432401461219682}
+--- !u!114 &5298774722149915511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7724386913435856354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebba8d1b233e1413ca7af35c77c96076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillPoint: {fileID: 7073764210912414111}

@@ -24,6 +24,7 @@ public class SkillSlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI stackText;
 
     public event Action<int> OnSynthesizeSkill;
+    public event Action<SkillType, SkillGrade> OnSkillReady;
 
     private void Awake()
     {
@@ -107,8 +108,8 @@ public class SkillSlot : MonoBehaviour
     {
         if (coolDownImage.fillAmount >= 1f)
         {
-            Debug.Log("스킬 사용");
             currentCooldown = 0f;
+            OnSkillReady?.Invoke(skillData.SkillType, grade);
         }
     }
 }

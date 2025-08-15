@@ -1,4 +1,6 @@
+using DataDeclaration;
+
 public interface ISkill
 {
-    public void ExecuteSkill(SkillDataByGrade data);
+    public void ExecuteSkill(SkillGrade grade);
 }

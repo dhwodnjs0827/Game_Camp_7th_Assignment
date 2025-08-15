@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDamageable, ISkill
+public class Player : MonoBehaviour, IDamageable
 {
     private PlayerStateMachine stateMachine;
     private PlayerAnimatorController animatorController;
     private PlayerStatController statController;
+    private PlayerSkillController skillController;
     
     public PlayerAnimatorController AnimatorController => animatorController;
 
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour, IDamageable, ISkill
     {
         animatorController = GetComponentInChildren<PlayerAnimatorController>();
         statController = GetComponent<PlayerStatController>();
+        skillController = GetComponent<PlayerSkillController>();
         stateMachine = new PlayerStateMachine(this);
     }
 
@@ -42,10 +44,5 @@ public class Player : MonoBehaviour, IDamageable, ISkill
     private void Dead()
     {
         stateMachine.ChangeState(stateMachine.DieState);
-    }
-
-    public void ExecuteSkill(SkillDataByGrade data)
-    {
-        
     }
 }
