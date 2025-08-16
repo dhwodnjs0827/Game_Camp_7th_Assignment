@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterSpawner : MonoBehaviour
+public class CharacterSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform respawnPoint;
+    [SerializeField] private Transform playerRespawnPoint;
+    [SerializeField] private Transform monsterRespawnPoint;
 
     private WaveSO[] waves;
     private WaveSO currentWave;
@@ -25,6 +26,7 @@ public class MonsterSpawner : MonoBehaviour
         canSpawn = false;
         currentWaveIndex = 0;
         InitMonsterPool();
+        RespawnPlayer();
     }
 
     private IEnumerator Start()
@@ -56,6 +58,12 @@ public class MonsterSpawner : MonoBehaviour
             }
         }
     }
+    
+    private void RespawnPlayer()
+    {
+        Player prefab = Resources.Load<Player>("Prefabs/Player");
+        Instantiate(prefab, playerRespawnPoint.position, Quaternion.identity);
+    }
 
     private void StartWave()
     {
@@ -82,7 +90,7 @@ public class MonsterSpawner : MonoBehaviour
         }
 
         monster.SetMonsterData(data);
-        monster.transform.position = respawnPoint.position;
+        monster.transform.position = monsterRespawnPoint.position;
 
         waveCooldown = currentWave.SpawnRate;
     }

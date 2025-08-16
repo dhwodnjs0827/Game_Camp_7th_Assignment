@@ -2733,7 +2733,7 @@ MonoBehaviour:
   gameSpeedText: {fileID: 2095971595}
   skillGroup: {fileID: 1650906885}
   createSkillButton: {fileID: 259270034}
-  monsterSpawner: {fileID: 8014518875771438625}
+  characterSpawner: {fileID: 8014518875771438625}
 --- !u!1 &1257912389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,7 +2841,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainUI: {fileID: 1225853692}
-  playerRespawnPoint: {fileID: 2113075697814945506}
 --- !u!4 &1277874779
 Transform:
   m_ObjectHideFlags: 0
@@ -7970,7 +7969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2113075697814945506}
   m_Layer: 0
-  m_Name: PlayerArea
+  m_Name: PlayerSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8640,7 +8639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191748acf02254583a52d1b6ffb41621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 349066315222234133}
+  playerRespawnPoint: {fileID: 2113075697814945506}
+  monsterRespawnPoint: {fileID: 349066315222234133}
 --- !u!1 &8083142586548327721
 GameObject:
   m_ObjectHideFlags: 0
