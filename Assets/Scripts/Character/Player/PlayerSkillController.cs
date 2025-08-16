@@ -22,12 +22,12 @@ public class PlayerSkillController : MonoBehaviour
         }
     }
 
-    public void UseSkill(SkillType type, SkillGrade grade)
+    private void UseSkill(SkillType type, SkillGrade grade)
     {
         BaseSkill prefab = skillPrefabs[type];
         BaseSkill skillObject = Instantiate(prefab, skillPoint);
-        var iSkill = skillObject.GetComponent<ISkill>();
-        iSkill.ExecuteSkill(grade);
+        ISkill iSkill = skillObject.GetComponent<ISkill>();
+        iSkill.ExecuteSkill(grade, gameObject);
     }
 
     private void Init()

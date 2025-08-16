@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using DataDeclaration;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ public class SkillDataByGrade
 {
     public float Damage;
     public float Cooldown;
-    public SkillGrade Grade;
+    public float Range;
 }
 
 [CreateAssetMenu(fileName = "Skill", menuName = "Data/Skill")]

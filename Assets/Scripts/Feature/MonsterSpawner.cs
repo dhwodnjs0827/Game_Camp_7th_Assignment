@@ -8,6 +8,8 @@ public class MonsterSpawner : MonoBehaviour
 
     private WaveSO[] waves;
     private WaveSO currentWave;
+    private float startDelay;
+    private bool canSpawn;
     private float waveTimer;
     private float waveCooldown;
     private int currentWaveIndex;
@@ -19,17 +21,24 @@ public class MonsterSpawner : MonoBehaviour
     private void Awake()
     {
         waves = Resources.LoadAll<WaveSO>("Data/SO/Wave");
+        startDelay = 5f;
+        canSpawn = false;
         currentWaveIndex = 0;
         InitMonsterPool();
     }
 
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(startDelay);
+        canSpawn = true;
     }
 
     private void Update()
     {
+        if (!canSpawn)
+        {
+            return;
+        }
         if (waveTimer <= 0)
         {
             StartWave();
@@ -50,6 +59,10 @@ public class MonsterSpawner : MonoBehaviour
 
     private void StartWave()
     {
+        if (currentWaveIndex >= waves.Length)
+        {
+            return;
+        }
         currentWave = waves[currentWaveIndex];
         waveTimer = currentWave.Duration;
         currentWaveIndex++;

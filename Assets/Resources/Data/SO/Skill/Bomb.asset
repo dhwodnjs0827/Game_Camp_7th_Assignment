@@ -21,19 +21,19 @@ MonoBehaviour:
   SkillDatasByGrade:
   - Damage: 1
     Cooldown: 7
-    Grade: 0
+    Range: 3
   - Damage: 2
     Cooldown: 6
-    Grade: 1
+    Range: 3
   - Damage: 3
     Cooldown: 5
-    Grade: 2
+    Range: 3
   - Damage: 4
     Cooldown: 4
-    Grade: 3
+    Range: 3
   - Damage: 5
     Cooldown: 3
-    Grade: 4
+    Range: 3
   - Damage: 6
     Cooldown: 2
-    Grade: 5
+    Range: 3
