@@ -7,25 +7,21 @@ public class PlayerDieState : PlayerBaseState
         animationHash = PlayerAnimationData.Die;
     }
 
-    public override void Enter()
-    {
-        base.Enter();
-        Debug.Log("Die 진입");
-    }
-
     public override void Execute()
     {
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-        Debug.Log("Die 탈출");
+        if (IsAnimationEnd())
+        {
+            player.Dead();
+        }
     }
     
     private bool IsAnimationEnd()
     {
         AnimatorStateInfo stateInfo = player.AnimatorController.Animator.GetCurrentAnimatorStateInfo(0);
+        if (!stateInfo.IsName("Player_Die"))
+        {
+            return false;
+        }
         return stateInfo.normalizedTime >= 1f;
     }
 }

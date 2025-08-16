@@ -540,7 +540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f00a5139a27a450f8125c38b3d1440c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpBar: {fileID: 1043432401461219682}
+  statCanvas: {fileID: 3668718825152022039}
+  currentHPBar: {fileID: 1043432401461219682}
 --- !u!114 &5298774722149915511
 MonoBehaviour:
   m_ObjectHideFlags: 0

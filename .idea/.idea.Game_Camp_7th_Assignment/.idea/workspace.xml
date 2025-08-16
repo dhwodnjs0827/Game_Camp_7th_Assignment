@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68e01d02-df69-452d-bb48-b7e8b5e75020" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Player/Player_Hit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Player/Player_Hit.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StageScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StageScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Game_Camp_7th_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game_Camp_7th_Assignment/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerSkillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerSkillController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerStatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerStatController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerDieState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/StateMachine/PlayerDieState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SkillGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SkillGroup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,5 +132,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerSkillController.cs</url>
+          <line>17</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Character/Player/PlayerSkillController.cs" containingFunctionPresentation="메서드 'OnEnable'">
+            <startOffsets>
+              <option value="338" />
+            </startOffsets>
+            <endOffsets>
+              <option value="400" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

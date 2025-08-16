@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,10 @@ public class MainUI : MonoBehaviour
     [SerializeField] private SkillGroup skillGroup;
     
     [SerializeField] private MonsterSpawner monsterSpawner;
+    
+    public SkillGroup SkillGroup => skillGroup;
+    
+    public event Action OnClickCreateSkill;
 
     private void Awake()
     {
@@ -19,15 +24,24 @@ public class MainUI : MonoBehaviour
         gameSpeedButton.onClick.AddListener(OnClickGameSpeedButton);
     }
 
+    private void OnEnable()
+    {
+        OnClickCreateSkill += skillGroup.GetNewSkill;
+    }
+
     private void Update()
     {
         UpdateWaveInfo();
     }
 
+    private void OnDisable()
+    {
+        OnClickCreateSkill -= skillGroup.GetNewSkill;
+    }
+
     private void OnClickCreateSkillButton()
     {
-        skillGroup.GetNewSkill();
-        GameManager.Instance.Player.StartAttack();
+        OnClickCreateSkill?.Invoke();
     }
 
     private void OnClickGameSpeedButton()

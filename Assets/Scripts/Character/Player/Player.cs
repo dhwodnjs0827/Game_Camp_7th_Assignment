@@ -8,7 +8,6 @@ public class Player : MonoBehaviour, IDamageable
     private PlayerSkillController skillController;
 
     public PlayerAnimatorController AnimatorController => animatorController;
-    public PlayerSkillController SkillController => skillController;
 
     private void Awake()
     {
@@ -18,9 +17,19 @@ public class Player : MonoBehaviour, IDamageable
         stateMachine = new PlayerStateMachine(this);
     }
 
+    private void OnEnable()
+    {
+        GameManager.Instance.MainUI.OnClickCreateSkill += StartAttack;
+    }
+
     private void Start()
     {
         stateMachine.ChangeState(stateMachine.IdleState);
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.MainUI.OnClickCreateSkill -= StartAttack;
     }
 
     private void Update()
@@ -35,23 +44,22 @@ public class Player : MonoBehaviour, IDamageable
             statController.Damaged(damage);
             if (statController.CurrentHP <= 0f)
             {
-                Dead();
+                stateMachine.ChangeState(stateMachine.DieState);
                 return;
             }
             stateMachine.ChangeState(stateMachine.HitState);
         }
     }
 
-    public void StartAttack()
+    private void StartAttack()
     {
-        if (stateMachine.CurrentState == stateMachine.IdleState)
-        {
-            stateMachine.ChangeState(stateMachine.AttackState);
-        }
+        stateMachine.ChangeState(stateMachine.AttackState);
+        GameManager.Instance.MainUI.OnClickCreateSkill -= StartAttack;
     }
 
-    private void Dead()
+    public void Dead()
     {
-        stateMachine.ChangeState(stateMachine.DieState);
+        Destroy(statController);
+        Destroy(skillController);
     }
 }

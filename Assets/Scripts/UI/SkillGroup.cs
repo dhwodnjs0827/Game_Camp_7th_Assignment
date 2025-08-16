@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DataDeclaration;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SkillGroup : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class SkillGroup : MonoBehaviour
     [SerializeField] private Transform arrowGroup;
 
     private Dictionary<SkillType, SkillSlot[]> skillSlots;
+    
+    public Dictionary<SkillType, SkillSlot[]> SkillSlots => skillSlots;
 
     private void Awake()
     {
@@ -45,7 +48,6 @@ public class SkillGroup : MonoBehaviour
                 {
                     slot.Init(skillDatas[i], j);
                     slot.OnSynthesizeSkill += SynthesizeSkill;
-                    slot.OnSkillReady += GameManager.Instance.Player.SkillController.UseSkill; 
                     slots[j] = slot;
                 }
             }

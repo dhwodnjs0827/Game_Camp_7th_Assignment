@@ -13,7 +13,31 @@ public class PlayerSkillController : MonoBehaviour
         Init();
     }
 
-    public void UseSkill(SkillType type, SkillGrade grade)
+    private void Start()
+    {
+        var slots = GameManager.Instance.MainUI.SkillGroup.SkillSlots;
+        foreach (var slot in slots)
+        {
+            foreach (var skillSlot in slot.Value)
+            {
+                skillSlot.OnSkillReady += UseSkill;
+            }
+        }
+    }
+
+    private void OnDisable()
+    {
+        var slots = GameManager.Instance.MainUI.SkillGroup.SkillSlots;
+        foreach (var slot in slots)
+        {
+            foreach (var skillSlot in slot.Value)
+            {
+                skillSlot.OnSkillReady -= UseSkill;
+            }
+        }
+    }
+
+    private void UseSkill(SkillType type, SkillGrade grade)
     {
         BaseSkill prefab = skillPrefabs[type];
         BaseSkill skillObject = Instantiate(prefab, skillPoint);

@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    private Player player;
+    [SerializeField] private MainUI mainUI;
+    
     [SerializeField] Transform playerRespawnPoint;
 
     private float[] gameSpeedArray;
     private int gameSpeedIndex;
     private float gameSpeed;
-
-    public Player Player => player;
+    
+    public MainUI MainUI => mainUI;
     public float GameSpeed => gameSpeed;
 
     protected override void Awake()
@@ -31,6 +32,6 @@ public class GameManager : MonoSingleton<GameManager>
     private void RespawnPlayer()
     {
         Player prefab = Resources.Load<Player>("Prefabs/Player");
-        player = Instantiate(prefab, playerRespawnPoint.position, Quaternion.identity);
+        Instantiate(prefab, playerRespawnPoint.position, Quaternion.identity);
     }
 }
