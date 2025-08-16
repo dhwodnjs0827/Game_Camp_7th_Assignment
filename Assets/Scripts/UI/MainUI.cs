@@ -24,6 +24,7 @@ public class MainUI : MonoBehaviour
     private void OnClickCreateSkillButton()
     {
         skillGroup.GetNewSkill();
+        GameManager.Instance.Player.StartAttack();
     }
 
     private void UpdateWaveInfo()

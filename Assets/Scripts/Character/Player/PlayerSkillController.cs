@@ -13,16 +13,7 @@ public class PlayerSkillController : MonoBehaviour
         Init();
     }
 
-    private void Start()
-    {
-        // 임시 코드
-        foreach (var slot in FindObjectsOfType<SkillSlot>())
-        {
-            slot.OnSkillReady += UseSkill;
-        }
-    }
-
-    private void UseSkill(SkillType type, SkillGrade grade)
+    public void UseSkill(SkillType type, SkillGrade grade)
     {
         BaseSkill prefab = skillPrefabs[type];
         BaseSkill skillObject = Instantiate(prefab, skillPoint);

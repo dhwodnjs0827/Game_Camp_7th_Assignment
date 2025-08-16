@@ -3,11 +3,14 @@ using UnityEngine;
 public abstract class Monster : MonoBehaviour, IDamageable
 {
     [SerializeField] protected MonsterSO data;
+    protected IDamageable target;
     
     private MonsterSpriteController spriteController;
     private MonsterStateMachine stateMachine;
     private BoxCollider2D boxCollider;
 
+    public MonsterSO Data => data;
+    public IDamageable Target => target;
     public BoxCollider2D BoxCollider => boxCollider;
 
     protected virtual void Awake()
@@ -32,8 +35,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
         if (other.transform.CompareTag("Player"))
         {
             stateMachine.ChangeState(stateMachine.AttackState);
-            var player = other.gameObject.GetComponent<IDamageable>();
-            player.TakeDamage(10f);
+            target = other.gameObject.GetComponent<IDamageable>();
         }
     }
 

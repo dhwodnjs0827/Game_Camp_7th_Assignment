@@ -11,7 +11,7 @@ namespace DataDeclaration
     public static class MonsterConstant
     {
         public const float MoveSpeed = 1.5f;
-        public const float AttackSpeed = 1.5f;
+        public const float AttackSpeed = 1.3f;
     }
 
     public static class GradeColor

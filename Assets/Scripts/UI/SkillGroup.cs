@@ -45,7 +45,7 @@ public class SkillGroup : MonoBehaviour
                 {
                     slot.Init(skillDatas[i], j);
                     slot.OnSynthesizeSkill += SynthesizeSkill;
-                    // slot.OnSkillReady += Player.UseSkill; 
+                    slot.OnSkillReady += GameManager.Instance.Player.SkillController.UseSkill; 
                     slots[j] = slot;
                 }
             }

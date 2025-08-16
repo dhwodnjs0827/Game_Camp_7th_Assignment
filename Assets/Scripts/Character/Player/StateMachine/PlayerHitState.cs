@@ -7,17 +7,21 @@ public class PlayerHitState : PlayerBaseState
         animationHash = PlayerAnimationData.Hit;
     }
 
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
     public override void Execute()
     {
+        if (IsAnimationEnd())
+        {
+            stateMachine.ChangeState(stateMachine.PreviousState);
+        }
     }
-
-    public override void Exit()
+    
+    private bool IsAnimationEnd()
     {
-        base.Exit();
+        AnimatorStateInfo stateInfo = player.AnimatorController.Animator.GetCurrentAnimatorStateInfo(0);
+        if (!stateInfo.IsName("Player_Hit"))
+        {
+            return false;
+        }
+        return stateInfo.normalizedTime >= 1f;
     }
 }

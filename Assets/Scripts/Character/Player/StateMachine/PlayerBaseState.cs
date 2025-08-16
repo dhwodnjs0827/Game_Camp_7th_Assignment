@@ -1,11 +1,13 @@
 public abstract class PlayerBaseState : BaseState
 {
     protected readonly Player player;
+    protected readonly PlayerStateMachine stateMachine;
     protected int animationHash;
     
     protected PlayerBaseState(PlayerStateMachine stateMachine)
     {
         player = stateMachine.Player;
+        this.stateMachine = stateMachine;
     }
     
     public override void Enter()

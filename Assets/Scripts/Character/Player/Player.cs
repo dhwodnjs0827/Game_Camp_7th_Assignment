@@ -6,8 +6,9 @@ public class Player : MonoBehaviour, IDamageable
     private PlayerAnimatorController animatorController;
     private PlayerStatController statController;
     private PlayerSkillController skillController;
-    
+
     public PlayerAnimatorController AnimatorController => animatorController;
+    public PlayerSkillController SkillController => skillController;
 
     private void Awake()
     {
@@ -38,6 +39,14 @@ public class Player : MonoBehaviour, IDamageable
                 return;
             }
             stateMachine.ChangeState(stateMachine.HitState);
+        }
+    }
+
+    public void StartAttack()
+    {
+        if (stateMachine.CurrentState == stateMachine.IdleState)
+        {
+            stateMachine.ChangeState(stateMachine.AttackState);
         }
     }
 
