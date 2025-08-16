@@ -10,30 +10,32 @@ public class SkillSlot : MonoBehaviour
     private SkillDataByGrade skillDataByGrade;
     private SkillGrade grade;
     private int skillStack;
-    
+
     private float skillCooldown;
     private float currentCooldown;
     private float fillAmountSpeed;
 
     [SerializeField] private Image backgroundIcon;
+    [SerializeField] private Image synthesizeImage;
 
-    [SerializeField] private Button button;
+    [SerializeField] private Button skillButton;
     [SerializeField] private Image iconImage;
     [SerializeField] private Image gradeColor;
     [SerializeField] private Image coolDownImage;
     [SerializeField] private TextMeshProUGUI stackText;
 
+    public event Action<SkillSlot, SkillSO, SkillDataByGrade> OnPopupInfo;
     public event Action<int> OnSynthesizeSkill;
     public event Action<SkillType, SkillGrade> OnSkillReady;
 
     private void Awake()
     {
-        button.onClick.AddListener(OnClickButton);
+        skillButton.onClick.AddListener(OnClickSlotButton);
     }
 
     private void Update()
     {
-        if (button.gameObject.activeSelf)
+        if (skillButton.gameObject.activeSelf)
         {
             UpdateUI();
         }
@@ -58,7 +60,18 @@ public class SkillSlot : MonoBehaviour
         {
             ActivateButton();
         }
+
         skillStack++;
+    }
+
+    public void ActivateSynthesizeImage()
+    {
+        synthesizeImage.gameObject.SetActive(true);
+    }
+
+    public void DeactivateSynthesizeImage()
+    {
+        synthesizeImage.gameObject.SetActive(false);
     }
 
     private void DecreaseStack()
@@ -70,29 +83,37 @@ public class SkillSlot : MonoBehaviour
         }
     }
 
-    private void OnClickButton()
+    private void OnClickSlotButton()
+    {
+        if (synthesizeImage.gameObject.activeSelf)
+        {
+            Synthesize();
+        }
+        else
+        {
+            OnPopupInfo?.Invoke(this, skillData, skillDataByGrade);
+        }
+    }
+
+    private void Synthesize()
     {
         if (skillStack >= 3)
         {
             DecreaseStack();
             OnSynthesizeSkill?.Invoke((int)grade);
+            synthesizeImage.gameObject.SetActive(false);
         }
-    }
-
-    private void OnPointerDownButton()
-    {
-        // PopupInfo 활성화
     }
 
     private void ActivateButton()
     {
-        button.gameObject.SetActive(true);
+        skillButton.gameObject.SetActive(true);
     }
 
     private void DeactivateButton()
     {
         coolDownImage.fillAmount = 0f;
-        button.gameObject.SetActive(false);
+        skillButton.gameObject.SetActive(false);
     }
 
     private void UpdateUI()

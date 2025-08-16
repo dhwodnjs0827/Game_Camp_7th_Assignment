@@ -8,6 +8,7 @@ public class SkillDataByGrade
     public float Damage;
     public float Cooldown;
     public float Range;
+    public SkillGrade Grade;
 }
 
 [CreateAssetMenu(fileName = "Skill", menuName = "Data/Skill")]

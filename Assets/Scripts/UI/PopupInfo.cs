@@ -1,3 +1,4 @@
+using DataDeclaration;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,8 @@ public class PopupInfo : MonoBehaviour
 {
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private Image gradeColorImage;
+    [SerializeField] private TextMeshProUGUI gradeText;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private TextMeshProUGUI attackText;
     [SerializeField] private TextMeshProUGUI cooldownText;
@@ -16,6 +19,8 @@ public class PopupInfo : MonoBehaviour
     {
         iconImage.sprite = null;
         nameText.text = null;
+        gradeColorImage.sprite = null;
+        gradeText.text = null;
         descriptionText.text = null;
         attackText.text = null;
         cooldownText.text = null;
@@ -27,9 +32,11 @@ public class PopupInfo : MonoBehaviour
     {
         iconImage.sprite = skill.Icon;
         nameText.text = skill.SkillName;
+        gradeColorImage.color = GradeColor.GradeColorDict[skillData.Grade];
+        gradeText.text = skillData.Grade.ToString();
         descriptionText.text = skill.Description;
-        attackText.text = skillData.Damage.ToString();
-        cooldownText.text = skillData.Cooldown.ToString();
+        attackText.text = skillData.Damage.ToString("N");
+        cooldownText.text = skillData.Cooldown.ToString("F");
         skillTypeText.text = skill.SkillType.ToString();
         attackTypeText.text = skill.AttackType.ToString();
     }
