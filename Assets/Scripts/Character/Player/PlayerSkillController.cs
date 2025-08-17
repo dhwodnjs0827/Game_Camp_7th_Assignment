@@ -15,24 +15,32 @@ public class PlayerSkillController : MonoBehaviour
 
     private void Start()
     {
-        var slots = GameManager.Instance.MainUI.SkillGroup.SkillSlots;
-        foreach (var slot in slots)
+        if (UIManager.Instance.IsUIActive<MainUI>())
         {
-            foreach (var skillSlot in slot.Value)
+            var mainUI = UIManager.Instance.GetUI<MainUI>();
+            var slots = mainUI.SkillGroup.SkillSlots;
+            foreach (var slot in slots)
             {
-                skillSlot.OnSkillReady += UseSkill;
+                foreach (var skillSlot in slot.Value)
+                {
+                    skillSlot.OnSkillReady += UseSkill;
+                }
             }
         }
     }
 
     private void OnDisable()
     {
-        var slots = GameManager.Instance.MainUI.SkillGroup.SkillSlots;
-        foreach (var slot in slots)
+        if (UIManager.Instance.IsUIActive<MainUI>())
         {
-            foreach (var skillSlot in slot.Value)
+            var mainUI = UIManager.Instance.GetUI<MainUI>();
+            var slots = mainUI.SkillGroup.SkillSlots;
+            foreach (var slot in slots)
             {
-                skillSlot.OnSkillReady -= UseSkill;
+                foreach (var skillSlot in slot.Value)
+                {
+                    skillSlot.OnSkillReady -= UseSkill;
+                }
             }
         }
     }

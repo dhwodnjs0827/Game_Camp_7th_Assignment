@@ -19,7 +19,11 @@ public class Player : MonoBehaviour, IDamageable
 
     private void OnEnable()
     {
-        GameManager.Instance.MainUI.OnClickCreateSkill += StartAttack;
+        if (UIManager.Instance.IsUIActive<MainUI>())
+        {
+            var mainUI = UIManager.Instance.GetUI<MainUI>();
+            mainUI.OnClickCreateSkill += StartAttack;
+        }
     }
 
     private void Start()
@@ -29,7 +33,11 @@ public class Player : MonoBehaviour, IDamageable
 
     private void OnDisable()
     {
-        GameManager.Instance.MainUI.OnClickCreateSkill -= StartAttack;
+        if (UIManager.Instance.IsUIActive<MainUI>())
+        {
+            var mainUI = UIManager.Instance.GetUI<MainUI>();
+            mainUI.OnClickCreateSkill -= StartAttack;
+        }
     }
 
     private void Update()
@@ -54,7 +62,11 @@ public class Player : MonoBehaviour, IDamageable
     private void StartAttack()
     {
         stateMachine.ChangeState(stateMachine.AttackState);
-        GameManager.Instance.MainUI.OnClickCreateSkill -= StartAttack;
+        if (UIManager.Instance.IsUIActive<MainUI>())
+        {
+            var mainUI = UIManager.Instance.GetUI<MainUI>();
+            mainUI.OnClickCreateSkill -= StartAttack;
+        }
     }
 
     public void Dead()

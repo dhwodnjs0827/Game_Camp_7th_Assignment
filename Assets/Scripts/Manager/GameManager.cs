@@ -5,13 +5,10 @@ using UnityEngine;
 public class GameManager : MonoSingleton<GameManager>
 {
     private Player player;
-    
     [SerializeField] private Transform playerRespawnPoint;
-    
-    private MainUI mainUI;
-    public MainUI MainUI => mainUI;
-    
-    
+
+    #region MonsterWaveFields
+
     private WaveSO[] waves;
     private WaveSO currentWave;
     private float startDelay;
@@ -23,11 +20,13 @@ public class GameManager : MonoSingleton<GameManager>
     public int CurrentWaveIndex => currentWaveIndex;
     public event Action<MonsterSO> OnRespawnMonster;
 
+    #endregion
+
     protected override void Awake()
     {
         base.Awake();
         WaveSetting();
-        mainUI = UIManager.Instance.CreateUI<MainUI>();
+        UIManager.Instance.CreateUI<MainUI>();
         RespawnPlayer();
     }
 
@@ -43,23 +42,8 @@ public class GameManager : MonoSingleton<GameManager>
         {
             return;
         }
-        if (waveTimer <= 0)
-        {
-            StartWave();
-        }
-        else
-        {
-            waveTimer -= Time.deltaTime;
-            if (waveCooldown <= 0)
-            {
-                OnRespawnMonster?.Invoke(currentWave.SpawnMonster);
-                waveCooldown = currentWave.SpawnRate;
-            }
-            else
-            {
-                waveCooldown -= Time.deltaTime;
-            }
-        }
+
+        StartWave();
     }
 
     private void RespawnPlayer()
@@ -78,12 +62,28 @@ public class GameManager : MonoSingleton<GameManager>
     
     private void StartWave()
     {
-        if (currentWaveIndex >= waves.Length)
+        if (waveTimer <= 0)
         {
-            return;
+            if (currentWaveIndex >= waves.Length)
+            {
+                return;
+            }
+            currentWave = waves[currentWaveIndex];
+            waveTimer = currentWave.Duration;
+            currentWaveIndex++;
         }
-        currentWave = waves[currentWaveIndex];
-        waveTimer = currentWave.Duration;
-        currentWaveIndex++;
+        else
+        {
+            waveTimer -= Time.deltaTime;
+            if (waveCooldown <= 0)
+            {
+                OnRespawnMonster?.Invoke(currentWave.SpawnMonster);
+                waveCooldown = currentWave.SpawnRate;
+            }
+            else
+            {
+                waveCooldown -= Time.deltaTime;
+            }
+        }
     }
 }
