@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using DataDeclaration;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     #region GameLogicFields
 
-    public bool IsGameOver = false;
+    [NonSerialized] public bool IsGameOver = false;
     
     private WaveSO[] waves;
     private WaveSO currentWave;
@@ -37,9 +36,15 @@ public class GameManager : MonoSingleton<GameManager>
     }
     
 #if UNITY_EDITOR
+    public bool IsPlayerInvincibility = false;
     public void OnClickStartWaveButton()
     {
         canSpawn = true;
+    }
+
+    public void OnClickPlayerInvincibilityButton()
+    {
+        IsPlayerInvincibility = !IsPlayerInvincibility;
     }
 #else
     private IEnumerator Start()

@@ -47,6 +47,12 @@ public class Player : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
+#if UNITY_EDITOR
+        if (GameManager.Instance.IsPlayerInvincibility)
+        {
+            return;
+        }
+#endif
         if (statController.CurrentHP > 0f)
         {
             statController.Damaged(damage);
