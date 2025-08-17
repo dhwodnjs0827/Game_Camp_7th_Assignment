@@ -50,6 +50,12 @@ namespace DataDeclaration
 
     #region Enum
 
+    public enum MonsterType
+    {
+        Normal,
+        Elite,
+    }
+    
     public enum AttackType
     {
         Melee,

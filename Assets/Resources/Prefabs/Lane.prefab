@@ -500,7 +500,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6662635545528095789}
-  - component: {fileID: 3043950508987694171}
   m_Layer: 0
   m_Name: Lane
   m_TagString: Untagged
@@ -526,18 +525,6 @@ Transform:
   - {fileID: 4746551423065493102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3043950508987694171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5549296743559539571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679949a566d774188a1fe8f6aa63bb1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6014632818706961417
 GameObject:
   m_ObjectHideFlags: 0

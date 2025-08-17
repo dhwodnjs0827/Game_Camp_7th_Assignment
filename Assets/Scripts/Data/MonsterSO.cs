@@ -1,10 +1,5 @@
+using DataDeclaration;
 using UnityEngine;
-
-public enum MonsterType
-{
-    Normal,
-    Elite,
-}
 
 [CreateAssetMenu(fileName = "Monster", menuName = "Data/Monster")]
 public class MonsterSO : ScriptableObject
