@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopupInfo : MonoBehaviour
+public class PopupInfo : PopupUI
 {
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI nameText;
@@ -15,8 +15,9 @@ public class PopupInfo : MonoBehaviour
     [SerializeField] private TextMeshProUGUI skillTypeText;
     [SerializeField] private TextMeshProUGUI attackTypeText;
 
-    private void OnDisable()
+    public override void Hide()
     {
+        base.Hide();
         iconImage.sprite = null;
         nameText.text = null;
         gradeColorImage.sprite = null;

@@ -18,6 +18,7 @@ public class SkillGroup : MonoBehaviour
 
     private void Awake()
     {
+        popupInfo = UIManager.Instance.CreateUI<PopupInfo>();
         Init();
     }
 
@@ -79,7 +80,7 @@ public class SkillGroup : MonoBehaviour
         skillSlots[synthesizedSkillType][synthesizedGrade].IncreaseStack();
 
         selectedSlot = null;
-        popupInfo.gameObject.SetActive(false);
+        popupInfo.Hide();
     }
 
     private void PopupInfoUI(SkillSlot selected, SkillSO skill, SkillDataByGrade skillData)
@@ -90,13 +91,13 @@ public class SkillGroup : MonoBehaviour
             selectedSlot = selected;
             selected.ActivateSynthesizeImage();
             popupInfo.SetData(skill, skillData);
-            popupInfo.gameObject.SetActive(true);
+            popupInfo.Show();
         }
         else
         {
             selectedSlot.DeactivateSynthesizeImage();
             selectedSlot = null;
-            popupInfo.gameObject.SetActive(false);
+            popupInfo.Hide();
         }
     }
 }
