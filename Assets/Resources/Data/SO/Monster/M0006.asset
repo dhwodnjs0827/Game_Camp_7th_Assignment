@@ -18,3 +18,4 @@ MonoBehaviour:
   Type: 0
   MaxHP: 35
   Attack: 6
+  DropGold: 60

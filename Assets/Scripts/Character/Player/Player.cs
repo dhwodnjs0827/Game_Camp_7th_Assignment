@@ -71,6 +71,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Dead()
     {
+        GameManager.Instance.IsGameOver = true;
         Destroy(statController);
         Destroy(skillController);
     }

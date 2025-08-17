@@ -35,7 +35,7 @@ public class SkillSlot : MonoBehaviour
 
     private void Update()
     {
-        if (skillButton.gameObject.activeSelf)
+        if (skillButton.gameObject.activeSelf && !GameManager.Instance.IsGameOver)
         {
             UpdateUI();
         }

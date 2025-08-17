@@ -7,10 +7,11 @@ namespace DataDeclaration
 
     public static class GameConstant
     {
-        public const int INIT_GOLD = 100;
+        public const int INIT_GOLD = 1000;
         public const float INIT_DELAY_WAVE_TIME = 5f;
         public const int INIT_MONSTER_POOL_STACK = 20;
         public const int SYNTHESIZE_STACK = 3;
+        public const int INIT_SKILL_GOLD = 5;
         public static readonly float[] GAME_SPEED_LIST = new float[4] { 1f, 2f, 3f, 5f };
         public const float DAMAGE_TEXT_DURATION = 0.5f;
         public const float DAMAGE_TEXT_SPEED = 2f;

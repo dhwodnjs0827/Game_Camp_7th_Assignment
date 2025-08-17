@@ -61,6 +61,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
     public void Dead()
     {
+        GameManager.Instance.IncreaseGold(data.DropGold);
         Destroy(gameObject);
     }
 }

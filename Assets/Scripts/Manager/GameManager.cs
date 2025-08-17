@@ -9,6 +9,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     #region GameLogicFields
 
+    public bool IsGameOver = false;
+    
     private WaveSO[] waves;
     private WaveSO currentWave;
     private bool canSpawn;
@@ -21,8 +23,8 @@ public class GameManager : MonoSingleton<GameManager>
     public float WaveTimer => waveTimer;
     public int CurrentWaveIndex => currentWaveIndex;
     public int Gold => gold;
-    
     public event Action<MonsterSO> OnRespawnMonster;
+    public event Action OnChangeGold;
 
     #endregion
 
@@ -33,15 +35,26 @@ public class GameManager : MonoSingleton<GameManager>
         UIManager.Instance.CreateUI<MainUI>();
         RespawnPlayer();
     }
-
+    
+#if UNITY_EDITOR
+    public void OnClickStartWaveButton()
+    {
+        canSpawn = true;
+    }
+#else
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(GameConstant.INIT_DELAY_WAVE_TIME);
         canSpawn = true;
     }
+#endif
 
     private void Update()
     {
+        if (IsGameOver)
+        {
+            return;
+        }
         if (!canSpawn)
         {
             return;
@@ -71,6 +84,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             if (currentWaveIndex >= waves.Length)
             {
+                IsGameOver = true;
                 return;
             }
             currentWave = waves[currentWaveIndex];
@@ -90,5 +104,17 @@ public class GameManager : MonoSingleton<GameManager>
                 waveCooldown -= Time.deltaTime;
             }
         }
+    }
+
+    public void IncreaseGold(int amount)
+    {
+        gold += amount;
+        OnChangeGold?.Invoke();
+    }
+
+    public void DecreaseGold(int amount)
+    {
+        gold -= amount;
+        OnChangeGold?.Invoke();
     }
 }
