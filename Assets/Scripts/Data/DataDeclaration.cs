@@ -9,8 +9,11 @@ namespace DataDeclaration
     {
         public const int INIT_GOLD = 100;
         public const float INIT_DELAY_WAVE_TIME = 5f;
+        public const int INIT_MONSTER_POOL_STACK = 20;
         public const int SYNTHESIZE_STACK = 3;
         public static readonly float[] GAME_SPEED_LIST = new float[4] { 1f, 2f, 3f, 5f };
+        public const float DAMAGE_TEXT_DURATION = 0.5f;
+        public const float DAMAGE_TEXT_SPEED = 2f;
     }
     
     public static class PlayerConstant
@@ -22,6 +25,12 @@ namespace DataDeclaration
     {
         public const float MOVE_SPEED = 1.5f;
         public const float ATTACK_SPEED = 1.3f;
+    }
+
+    public static class SkillConstant
+    {
+        public const float PROJECTILE_SPEED = 2f;
+        public const float BOMB_EXPLODE_DELAY_TIME = 2f;
     }
 
     public static class GradeColor

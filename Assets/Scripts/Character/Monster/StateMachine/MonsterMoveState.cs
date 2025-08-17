@@ -7,20 +7,10 @@ public class MonsterMoveState : MonsterBaseState
     {
     }
 
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
     public override void Execute()
     {
         base.Execute();
         Move();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
     }
 
     private void Move()

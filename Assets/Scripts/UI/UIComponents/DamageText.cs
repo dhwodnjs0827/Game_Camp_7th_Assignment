@@ -16,10 +16,10 @@ public class DamageText : MonoBehaviour
     {
         damageText.text = damage.ToString("N0");
         
-        float duration = 0.5f;
+        float duration = GameConstant.DAMAGE_TEXT_DURATION;
         float elapsed = 0f;
         Vector2 startPos = transform.position;
-        Vector2 endPos = startPos + Vector2.up * 2;
+        Vector2 endPos = startPos + Vector2.up * GameConstant.DAMAGE_TEXT_SPEED;
 
         while (elapsed < duration)
         {

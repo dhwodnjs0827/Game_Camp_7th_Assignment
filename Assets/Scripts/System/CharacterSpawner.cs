@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DataDeclaration;
 using UnityEngine;
 
 public class CharacterSpawner : MonoBehaviour
@@ -42,7 +43,7 @@ public class CharacterSpawner : MonoBehaviour
     {
         monsterPool = new Queue<Monster>();
         var prefab = Resources.Load<Monster>("Prefabs/Monster/NormalMonster");
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < GameConstant.INIT_MONSTER_POOL_STACK; i++)
         {
             Monster monster = Instantiate(prefab);
             monster.gameObject.SetActive(false);

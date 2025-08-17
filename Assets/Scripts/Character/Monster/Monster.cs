@@ -8,8 +8,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
     private MonsterSpriteController spriteController;
     private MonsterStatController statController;
     private MonsterStateMachine stateMachine;
-
-    public MonsterSO Data => data;
+    
     public MonsterStatController StatController => statController;
     public IDamageable Target => target;
 

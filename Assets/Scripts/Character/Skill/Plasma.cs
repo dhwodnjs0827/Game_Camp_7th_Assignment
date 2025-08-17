@@ -1,10 +1,11 @@
+using DataDeclaration;
 using UnityEngine;
 
 public class Plasma : BaseSkill
 {
     private void Update()
     {
-        transform.position += new Vector3(0f, -2f * Time.deltaTime, 0f);
+        transform.position += new Vector3(0f, -SkillConstant.PROJECTILE_SPEED * Time.deltaTime, 0f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -20,7 +20,7 @@ public class Bomb : BaseSkill
 
     private IEnumerator Explode()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(SkillConstant.BOMB_EXPLODE_DELAY_TIME);
         animator.SetTrigger(BombExplode);
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, skillData.Range);
         for (int i = 0; i < hits.Length; i++)

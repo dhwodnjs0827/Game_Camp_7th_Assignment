@@ -1,3 +1,4 @@
+using DataDeclaration;
 using UnityEngine;
 
 public class Arrow : BaseSkill
@@ -13,7 +14,7 @@ public class Arrow : BaseSkill
     {
         if (!hasHit)
         {
-            transform.position += new Vector3(0f, -2f * Time.deltaTime, 0f);
+            transform.position += new Vector3(0f, -SkillConstant.PROJECTILE_SPEED * Time.deltaTime, 0f);
         }
     }
 
@@ -30,7 +31,6 @@ public class Arrow : BaseSkill
         hasHit = true;
         var target = other.gameObject.GetComponent<IDamageable>();
         target?.TakeDamage(skillData.Damage);
-        Debug.Log("화살 단일");
         Destroy(gameObject);
     }
 }
