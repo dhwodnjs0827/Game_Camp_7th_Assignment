@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class MonsterStatController : MonoBehaviour
 {
     [SerializeField] private Image currentHPBar;
+    [SerializeField] private Transform damageTextPoint;
 
     private float maxHP;
     private float currentHP;
@@ -28,5 +29,13 @@ public class MonsterStatController : MonoBehaviour
     {
         currentHP -= damage;
         currentHPBar.fillAmount = currentHP / maxHP;
+        CreateDamageText(damage);
+    }
+
+    private void CreateDamageText(float damage)
+    {
+        var prefab = Resources.Load<DamageText>("Prefabs/UI/DamageText");
+        var damageText = Instantiate(prefab, damageTextPoint);
+        damageText.Init(damage);
     }
 }
