@@ -13,7 +13,7 @@ public class MonsterAttackState : MonsterBaseState
     public override void Enter()
     {
         base.Enter();
-        damage = monster.Data.Attack;
+        damage = monster.StatController.Attack;
         attackCoolDownTimer = MonsterConstant.AttackSpeed;
     }
 

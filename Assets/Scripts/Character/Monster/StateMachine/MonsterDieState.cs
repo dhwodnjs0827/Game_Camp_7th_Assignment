@@ -4,4 +4,10 @@ public class MonsterDieState : MonsterBaseState
     {
         
     }
+
+    public override void Enter()
+    {
+        base.Enter();
+        monster.Dead();
+    }
 }

@@ -6,17 +6,17 @@ public abstract class Monster : MonoBehaviour, IDamageable
     protected IDamageable target;
     
     private MonsterSpriteController spriteController;
+    private MonsterStatController statController;
     private MonsterStateMachine stateMachine;
-    private BoxCollider2D boxCollider;
 
     public MonsterSO Data => data;
+    public MonsterStatController StatController => statController;
     public IDamageable Target => target;
-    public BoxCollider2D BoxCollider => boxCollider;
 
     protected virtual void Awake()
     {
         spriteController = GetComponentInChildren<MonsterSpriteController>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        statController = GetComponent<MonsterStatController>();
         stateMachine = new MonsterStateMachine(this);
     }
 
@@ -43,21 +43,25 @@ public abstract class Monster : MonoBehaviour, IDamageable
     {
         this.data = data;
         spriteController.Init(data.ID);
+        statController.InitStats(data);
     }
 
     public void TakeDamage(float damage)
     {
-        Debug.Log($"몬스터 {damage} 받음");
+        if (statController.CurrentHP > 0f)
+        {
+            statController.Damaged(damage);
+            if (statController.CurrentHP <= 0f)
+            {
+                stateMachine.ChangeState(stateMachine.DieState);
+                return;
+            }
+            stateMachine.ChangeState(stateMachine.HitState);
+        }
+    }
+
+    public void Dead()
+    {
         Destroy(gameObject);
-        // if (statController.CurrentHP > 0f)
-        // {
-        //     statController.Damaged(damage);
-        //     if (statController.CurrentHP <= 0f)
-        //     {
-        //         Dead();
-        //         return;
-        //     }
-        //     stateMachine.ChangeState(stateMachine.HitState);
-        // }
     }
 }

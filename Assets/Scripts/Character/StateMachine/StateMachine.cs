@@ -8,8 +8,8 @@ public class StateMachine
 
     public void ChangeState(IState newState)
     {
-        currentState?.Exit();
         previousState = currentState;
+        previousState?.Exit();
         currentState = newState;
         currentState.Enter();
     }
