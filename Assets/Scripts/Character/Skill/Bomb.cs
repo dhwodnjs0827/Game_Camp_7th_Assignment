@@ -22,7 +22,7 @@ public class Bomb : BaseSkill
     {
         yield return new WaitForSeconds(2f);
         animator.SetTrigger(BombExplode);
-        Collider2D[] hits = Physics2D.OverlapCircleAll(Vector2.zero, skillData.Range);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, skillData.Range);
         for (int i = 0; i < hits.Length; i++)
         {
             if (!hits[i].gameObject.Equals(caster) && hits[i].TryGetComponent<IDamageable>(out var damageable))
@@ -30,5 +30,12 @@ public class Bomb : BaseSkill
                 damageable.TakeDamage(skillData.Damage);
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Color color = Color.red;
+        Gizmos.color = color;
+        Gizmos.DrawWireSphere(transform.position, skillData.Range);
     }
 }
