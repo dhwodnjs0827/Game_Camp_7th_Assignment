@@ -6,14 +6,16 @@ public class PlayerStatController : MonoBehaviour
 {
     [SerializeField] private GameObject statCanvas;
     [SerializeField] private Image currentHPBar;
+    private float maxHP;
     private float currentHP;
     
     public float CurrentHP => currentHP;
 
     private void Awake()
     {
-        currentHP = PlayerConstant.MaxHP;
-        currentHPBar.fillAmount = currentHP / PlayerConstant.MaxHP;
+        maxHP = PlayerConstant.MAX_HP;
+        currentHP = maxHP;
+        currentHPBar.fillAmount = currentHP / maxHP;
     }
 
     private void OnEnable()
@@ -29,6 +31,6 @@ public class PlayerStatController : MonoBehaviour
     public void Damaged(float damage)
     {
         currentHP -= damage;
-        currentHPBar.fillAmount = currentHP / PlayerConstant.MaxHP;
+        currentHPBar.fillAmount = currentHP / maxHP;
     }
 }

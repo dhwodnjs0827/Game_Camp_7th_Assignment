@@ -49,7 +49,7 @@ public class SkillSlot : MonoBehaviour
         backgroundIcon.sprite = data.Icon;
 
         iconImage.sprite = data.Icon;
-        gradeColor.color = GradeColor.GradeColorDict[grade];
+        gradeColor.color = GradeColor.GRADE_COLOR[grade];
 
         DeactivateButton();
     }
@@ -76,7 +76,7 @@ public class SkillSlot : MonoBehaviour
 
     private void DecreaseStack()
     {
-        skillStack -= 3;
+        skillStack -= GameConstant.SYNTHESIZE_STACK;
         if (skillStack <= 0)
         {
             DeactivateButton();
@@ -97,7 +97,7 @@ public class SkillSlot : MonoBehaviour
 
     private void Synthesize()
     {
-        if (skillStack >= 3)
+        if (skillStack >= GameConstant.SYNTHESIZE_STACK)
         {
             DecreaseStack();
             OnSynthesizeSkill?.Invoke((int)grade);

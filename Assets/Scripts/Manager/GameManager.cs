@@ -1,23 +1,27 @@
 using System;
 using System.Collections;
+using DataDeclaration;
 using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    private Player player;
     [SerializeField] private Transform playerRespawnPoint;
 
-    #region MonsterWaveFields
+    #region GameLogicFields
 
     private WaveSO[] waves;
     private WaveSO currentWave;
-    private float startDelay;
     private bool canSpawn;
     private float waveTimer;
     private float waveCooldown;
     private int currentWaveIndex;
+
+    private int gold;
+    
     public float WaveTimer => waveTimer;
     public int CurrentWaveIndex => currentWaveIndex;
+    public int Gold => gold;
+    
     public event Action<MonsterSO> OnRespawnMonster;
 
     #endregion
@@ -25,14 +29,14 @@ public class GameManager : MonoSingleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        WaveSetting();
+        GameLogicSetting();
         UIManager.Instance.CreateUI<MainUI>();
         RespawnPlayer();
     }
 
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(startDelay);
+        yield return new WaitForSeconds(GameConstant.INIT_DELAY_WAVE_TIME);
         canSpawn = true;
     }
 
@@ -49,15 +53,16 @@ public class GameManager : MonoSingleton<GameManager>
     private void RespawnPlayer()
     {
         Player prefab = Resources.Load<Player>("Prefabs/Player");
-        player = Instantiate(prefab, playerRespawnPoint.position, Quaternion.identity);
+        Instantiate(prefab, playerRespawnPoint.position, Quaternion.identity);
     }
 
-    private void WaveSetting()
+    private void GameLogicSetting()
     {
         waves = Resources.LoadAll<WaveSO>("Data/SO/Wave");
-        startDelay = 5f;
         canSpawn = false;
         currentWaveIndex = 0;
+
+        gold = GameConstant.INIT_GOLD;
     }
     
     private void StartWave()

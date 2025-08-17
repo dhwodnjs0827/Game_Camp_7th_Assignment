@@ -25,6 +25,6 @@ public class MonsterMoveState : MonsterBaseState
 
     private void Move()
     {
-        monster.transform.position += new Vector3(0f, MonsterConstant.MoveSpeed * Time.deltaTime, 0f);
+        monster.transform.position += new Vector3(0f, MonsterConstant.MOVE_SPEED * Time.deltaTime, 0f);
     }
 }

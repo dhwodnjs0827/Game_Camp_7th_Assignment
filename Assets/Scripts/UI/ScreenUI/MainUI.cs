@@ -1,4 +1,5 @@
 using System;
+using DataDeclaration;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,7 +28,7 @@ public class MainUI : ScreenUI
         base.Init();
         createSkillButton.onClick.AddListener(OnClickCreateSkillButton);
         gameSpeedButton.onClick.AddListener(OnClickGameSpeedButton);
-        gameSpeedArray = new float[4] { 1f, 2f, 3f, 5f };
+        gameSpeedArray = GameConstant.GAME_SPEED_LIST;
         gameSpeedIndex = 0;
         gameSpeed = gameSpeedArray[gameSpeedIndex];
         

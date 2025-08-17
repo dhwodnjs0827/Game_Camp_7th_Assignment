@@ -33,7 +33,7 @@ public class PopupInfo : PopupUI
     {
         iconImage.sprite = skill.Icon;
         nameText.text = skill.SkillName;
-        gradeColorImage.color = GradeColor.GradeColorDict[skillData.Grade];
+        gradeColorImage.color = GradeColor.GRADE_COLOR[skillData.Grade];
         gradeText.text = skillData.Grade.ToString();
         descriptionText.text = skill.Description;
         attackText.text = skillData.Damage.ToString("N");

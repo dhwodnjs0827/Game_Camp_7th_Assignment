@@ -14,14 +14,14 @@ public class MonsterAttackState : MonsterBaseState
     {
         base.Enter();
         damage = monster.StatController.Attack;
-        attackCoolDownTimer = MonsterConstant.AttackSpeed;
+        attackCoolDownTimer = MonsterConstant.ATTACK_SPEED;
     }
 
     public override void Execute()
     {
         base.Execute();
         attackCoolDownTimer += Time.deltaTime;
-        if (attackCoolDownTimer >= MonsterConstant.AttackSpeed)
+        if (attackCoolDownTimer >= MonsterConstant.ATTACK_SPEED)
         {
             Attack();
         }

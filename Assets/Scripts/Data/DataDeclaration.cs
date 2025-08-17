@@ -3,20 +3,30 @@ using UnityEngine;
 
 namespace DataDeclaration
 {
+    #region Constants
+
+    public static class GameConstant
+    {
+        public const int INIT_GOLD = 100;
+        public const float INIT_DELAY_WAVE_TIME = 5f;
+        public const int SYNTHESIZE_STACK = 3;
+        public static readonly float[] GAME_SPEED_LIST = new float[4] { 1f, 2f, 3f, 5f };
+    }
+    
     public static class PlayerConstant
     {
-        public const float MaxHP = 100f;
+        public const float MAX_HP = 100f;
     }
 
     public static class MonsterConstant
     {
-        public const float MoveSpeed = 1.5f;
-        public const float AttackSpeed = 1.3f;
+        public const float MOVE_SPEED = 1.5f;
+        public const float ATTACK_SPEED = 1.3f;
     }
 
     public static class GradeColor
     {
-        public static readonly Dictionary<SkillGrade, Color> GradeColorDict = new Dictionary<SkillGrade, Color>()
+        public static readonly Dictionary<SkillGrade, Color> GRADE_COLOR = new Dictionary<SkillGrade, Color>()
         {
             { SkillGrade.Common, new Color(128/255f, 128/255f, 128/255f) },
             { SkillGrade.Uncommon, new Color(20/255f, 94/255f, 0f) },
@@ -26,7 +36,11 @@ namespace DataDeclaration
             { SkillGrade.Mythic, new Color(176f/255f, 13/255f, 0f) }
         };
     }
-    
+
+    #endregion
+
+    #region Enum
+
     public enum AttackType
     {
         Melee,
@@ -55,4 +69,6 @@ namespace DataDeclaration
         Legendary,
         Mythic,
     }
+
+    #endregion
 }

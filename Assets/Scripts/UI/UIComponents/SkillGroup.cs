@@ -69,18 +69,15 @@ public class SkillGroup : MonoBehaviour
 
     private void SynthesizeSkill(int materialGrade)
     {
-        if (materialGrade == (int)SkillGrade.Mythic)
+        if (materialGrade != (int)SkillGrade.Mythic)
         {
-            // 최고 등급 합성 시
-            return;
+            int synthesizedGrade = materialGrade + 1;
+            SkillType synthesizedSkillType = (SkillType)Random.Range(0, 3);
+            skillSlots[synthesizedSkillType][synthesizedGrade].IncreaseStack();
+
+            selectedSlot = null;
+            popupInfo.Hide();
         }
-
-        int synthesizedGrade = materialGrade + 1;
-        SkillType synthesizedSkillType = (SkillType)Random.Range(0, 3);
-        skillSlots[synthesizedSkillType][synthesizedGrade].IncreaseStack();
-
-        selectedSlot = null;
-        popupInfo.Hide();
     }
 
     private void PopupInfoUI(SkillSlot selected, SkillSO skill, SkillDataByGrade skillData)
