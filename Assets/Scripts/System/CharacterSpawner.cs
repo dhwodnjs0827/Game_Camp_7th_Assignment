@@ -21,24 +21,7 @@ public class CharacterSpawner : MonoBehaviour
     {
         GameManager.Instance.OnRespawnMonster -= RespawnMonster;
     }
-
-    private void RespawnMonster(MonsterSO data)
-    {
-        monsterPool.TryDequeue(out Monster monster);
-        if (monster == null)
-        {
-            var prefab = Resources.Load<Monster>("Prefabs/Monster/NormalMonster");
-            monster = Instantiate(prefab);
-        }
-        else
-        {
-            monster.gameObject.SetActive(true);
-        }
-
-        monster.SetMonsterData(data);
-        monster.transform.position = monsterRespawnPoint.position;
-    }
-
+    
     private void InitMonsterPool()
     {
         monsterPool = new Queue<Monster>();
@@ -47,7 +30,38 @@ public class CharacterSpawner : MonoBehaviour
         {
             Monster monster = Instantiate(prefab);
             monster.gameObject.SetActive(false);
+            monster.OnReturnToPool += ReturnMonsterToPool;
             monsterPool.Enqueue(monster);
         }
+    }
+
+    private void RespawnMonster(MonsterSO data)
+    {
+        Monster monster = GetMonsterFromPool();
+        monster.SetMonsterData(data);
+        monster.transform.position = monsterRespawnPoint.position;
+    }
+
+    private Monster GetMonsterFromPool()
+    {
+        Monster monster;
+        if (monsterPool.Count > 0)
+        {
+            monsterPool.TryDequeue(out monster);
+            monster.gameObject.SetActive(true);
+        }
+        else
+        {
+            var prefab = Resources.Load<Monster>("Prefabs/Monster/NormalMonster");
+            monster = Instantiate(prefab);
+
+            monster.OnReturnToPool += ReturnMonsterToPool;
+        }
+        return monster;
+    }
+
+    private void ReturnMonsterToPool(Monster monster)
+    {
+        monsterPool.Enqueue(monster);
     }
 }

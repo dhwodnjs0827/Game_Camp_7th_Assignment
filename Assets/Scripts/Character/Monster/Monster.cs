@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class Monster : MonoBehaviour, IDamageable
@@ -11,6 +12,8 @@ public abstract class Monster : MonoBehaviour, IDamageable
     
     public MonsterStatController StatController => statController;
     public IDamageable Target => target;
+
+    public event Action<Monster> OnReturnToPool;
 
     protected virtual void Awake()
     {
@@ -43,6 +46,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
         this.data = data;
         spriteController.Init(data.ID);
         statController.InitStats(data);
+        stateMachine.ChangeState(stateMachine.MoveState);
     }
 
     public void TakeDamage(float damage)
@@ -62,6 +66,9 @@ public abstract class Monster : MonoBehaviour, IDamageable
     public void Dead()
     {
         GameManager.Instance.IncreaseGold(data.DropGold);
-        Destroy(gameObject);
+        
+        OnReturnToPool?.Invoke(this);
+        
+        gameObject.SetActive(false);
     }
 }
